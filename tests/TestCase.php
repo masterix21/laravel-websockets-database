@@ -3,8 +3,8 @@
 namespace Masterix21\WebsocketsDatabase\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Orchestra\Testbench\TestCase as Orchestra;
 use Masterix21\WebsocketsDatabase\WebsocketsDatabaseServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
