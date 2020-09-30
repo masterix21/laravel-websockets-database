@@ -1,24 +1,24 @@
 <?php
 
-namespace Spatie\Skeleton;
+namespace Masterix21\WebsocketsDatabase;
 
 use Illuminate\Support\ServiceProvider;
-use Spatie\Skeleton\Commands\SkeletonCommand;
+use Masterix21\WebsocketsDatabase\Commands\WebsocketsDatabaseCommand;
 
-class SkeletonServiceProvider extends ServiceProvider
+class WebsocketsDatabaseServiceProvider extends ServiceProvider
 {
     public function boot()
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../config/skeleton.php' => config_path('skeleton.php'),
+                __DIR__ . '/../config/laravel-websockets-database.php' => config_path('laravel-websockets-database.php'),
             ], 'config');
 
             $this->publishes([
-                __DIR__ . '/../resources/views' => base_path('resources/views/vendor/skeleton'),
+                __DIR__ . '/../resources/views' => base_path('resources/views/vendor/laravel-websockets-database'),
             ], 'views');
 
-            $migrationFileName = 'create_skeleton_table.php';
+            $migrationFileName = 'create_laravel_websockets_database_table.php';
             if (! $this->migrationFileExists($migrationFileName)) {
                 $this->publishes([
                     __DIR__ . "/../database/migrations/{$migrationFileName}.stub" => database_path('migrations/' . date('Y_m_d_His', time()) . '_' . $migrationFileName),
@@ -26,16 +26,16 @@ class SkeletonServiceProvider extends ServiceProvider
             }
 
             $this->commands([
-                SkeletonCommand::class,
+                WebsocketsDatabaseCommand::class,
             ]);
         }
 
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'skeleton');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'laravel-websockets-database');
     }
 
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/skeleton.php', 'skeleton');
+        $this->mergeConfigFrom(__DIR__ . '/../config/laravel-websockets-database.php', 'laravel-websockets-database');
     }
 
     public static function migrationFileExists(string $migrationFileName): bool

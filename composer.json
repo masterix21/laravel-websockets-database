@@ -1,22 +1,23 @@
 {
-    "name": ":vendor_name/:package_name",
-    "description": ":package_description",
+    "name": "masterix21/laravel-websockets-database",
+    "description": "Add database ability to the awesome Laravel Websockets package",
     "keywords": [
-        ":vendor_name",
-        ":package_name"
+        "masterix21",
+        "laravel-websockets-database"
     ],
-    "homepage": "https://github.com/:vendor_name/:package_name",
+    "homepage": "https://github.com/masterix21/laravel-websockets-database",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
+            "name": "Luca Longo",
+            "email": "l.longo@ambita.it",
             "homepage": "https://spatie.be",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^7.4",
+        "php": "^7.2",
+        "beyondcode/laravel-websockets": "^1.8",
         "illuminate/contracts": "^8.0"
     },
     "require-dev": {
@@ -27,13 +28,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\Skeleton\\": "src",
-            "Spatie\\Skeleton\\Database\\Factories\\": "database/factories"
+            "Masterix21\\WebsocketsDatabase\\": "src",
+            "Masterix21\\WebsocketsDatabase\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\Skeleton\\Tests\\": "tests"
+            "Masterix21\\WebsocketsDatabase\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -48,10 +49,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Spatie\\Skeleton\\SkeletonServiceProvider"
+                "Masterix21\\WebsocketsDatabase\\WebsocketsDatabaseServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "Spatie\\Skeleton\\SkeletonFacade"
+                "WebsocketsDatabase": "Masterix21\\WebsocketsDatabase\\WebsocketsDatabaseFacade"
             }
         }
     },
